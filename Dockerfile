@@ -12,7 +12,7 @@ RUN chmod +x /root/update.py
 
 # Add server start script
 ADD start.sh /root/start.sh
-RUN chmod +x /root/update.py
+RUN chmod +x /root/start.py
 
 
 # Expose minecraft port and mount server data volume
