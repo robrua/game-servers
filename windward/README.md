@@ -1,0 +1,1 @@
+docker run -d -p 5127:5127 --restart=always --name windward -v path/to/your/server/data/folder:/root/Windward -e "WINDWARD_SERVER_NAME=A WindWard Server" robrua/game-servers:windward
