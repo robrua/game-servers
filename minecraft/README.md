@@ -1,1 +1,0 @@
-docker run -d -p 25565:25565 --restart=always --name minecraft -v path/to/your/server/data/folder:/root/minecraft -e "MINECRAFT_XMX=1G" -e "MINECRAFT_XMS=1G" robrua/game-servers:minecraft
