@@ -1,0 +1,1 @@
+docker run -d -p 26900:26900 --restart=always --name 7-days-to-die -v path/to/your/serverconfig.xml:/root/7-days-to-die/serverconfig.xml -v "/path/to/your/saves/folder:/root/7-days-to-die/7 Days To Die/Saves" robrua/game-servers:7-days-to-die
