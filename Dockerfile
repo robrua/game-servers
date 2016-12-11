@@ -36,7 +36,7 @@ RUN chmod +x /root/start.sh && chmod +x /root/update.sh
 
 # Expose game port and mount saves volume
 EXPOSE 26900
-VOLUME "/root/7-days-to-die/7 Days To Die/Saves"
+VOLUME /root/.local/share/7DaysToDie/Saves
 
 
 # Ready
