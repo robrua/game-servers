@@ -9,7 +9,7 @@ ENV DEBIAN_FRONTEND noninteractive
 
 # Get steamcmd to install the server
 RUN apt-get update --fix-missing && apt-get install -y --no-install-recommends \
-        wget lib32gcc1 && \
+        wget lib32gcc1 ca-certificates && \
 rm -rf /var/lib/apt/lists/*
 
 
