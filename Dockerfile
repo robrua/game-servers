@@ -1,32 +1,24 @@
-FROM robrua/game-servers:steamcmd
+FROM python:slim
 
 
 MAINTAINER Rob Rua <robrua@alumni.cmu.edu>
 
 
-ENV DEBIAN_FRONTEND noninteractive
+# Add update script
+ADD update.py /root/update.py
+RUN chmod +x /root/update.py
 
 
-# Install the server
-RUN /bin/bash /root/steam/steamcmd.sh \
-    +login "anonymous" \
-    +force_install_dir /root/7-days-to-die \
-    +app_update 294420 \
-    +quit && \
-    rm -fr /root/Steam
-
-
-# Add scripts
+# Add server start script
 ADD start.sh /root/start.sh
-ADD update.sh /root/update.sh
-RUN chmod +x /root/start.sh && chmod +x /root/update.sh
+RUN chmod +x /root/start.sh
 
 
-# Expose game port and mount saves volume
-EXPOSE 26900
-VOLUME /root/.local/share/7DaysToDie/Saves
+# Expose factorio port and mount server data volume
+EXPOSE 34197
+VOLUME /root/factorio
 
 
 # Ready
-WORKDIR /root/7-days-to-die
-CMD /root/update.sh && /root/start.sh
+WORKDIR /root/factorio
+CMD /root/update.py && /root/start.sh

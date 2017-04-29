@@ -1,1 +1,1 @@
-docker run -d -p 26900:26900 --restart=always --name 7-days-to-die -v path/to/your/serverconfig.xml:/root/7-days-to-die/serverconfig.xml -v /path/to/your/saves/folder:/root/.local/share/7DaysToDie/Saves robrua/game-servers:7-days-to-die
+docker run -d -p 34197:34197/udp --restart=always --name factorio -v path/to/your/server/data/folder:/root/factorio robrua/game-servers:factorio
